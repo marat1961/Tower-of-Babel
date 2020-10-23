@@ -22,12 +22,15 @@ type
 
 {$Region 'TRandom64: random number generator for Int64'}
 
-  // Donald Knuth
-  // implemented as a deterministic linear congruential generator
+  // Donald E. Knut, The art of computer progamming,
+  // Volume 2, Seminumerical Algorothms.
+  // Implemented as a deterministic linear congruential generator
   // with 6364136223846793005 as a and 1442695040888963407 as c
+  //
   // Hastily sketched. Not tested!
   // Perhaps for everything to work correctly,
   // we need to implement multiplication of 64-bit numbers.
+
   TRandom64 = record
   class var
     seed: Int64;
