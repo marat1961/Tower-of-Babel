@@ -25,6 +25,9 @@ type
   // Donald Knuth
   // implemented as a deterministic linear congruential generator
   // with 6364136223846793005 as a and 1442695040888963407 as c
+  // Hastily sketched. Not tested!
+  // Perhaps for everything to work correctly,
+  // we need to implement multiplication of 64-bit numbers.
   TRandom64 = record
   class var
     seed: Int64;
@@ -71,7 +74,7 @@ end;
 
 class function TRandom64.Def: Int64;
 begin
-  Result := UInt32(seed) * 6364136223846793005 + 1442695040888963407;
+  Result := seed * 6364136223846793005 + 1442695040888963407;
   seed := Result;
 end;
 
